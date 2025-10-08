@@ -288,7 +288,13 @@ class ExtensionAPI:
         Highlight specific code sections in the editor.
         
         Args:
-            results: A list of highlight specifications with positions and styles.
+            results: A list of highlight specification dictionaries. Each dictionary can contain:
+                - 'file_path' (str, optional): Path to the file to highlight. If not provided, uses current file.
+                - 'row_from' (int): Starting row number for the highlight (1-indexed).
+                - 'row_to' (int, optional): Ending row number for the highlight. If not provided, highlights single row.
+                - 'column_from' (int, optional): Starting column number for the highlight (1-indexed).
+                - 'column_to' (int, optional): Ending column number for the highlight.
+                - 'description' (str): Description or message to display for this highlight.
         """
         self._dump('highlight', results=results)
 
