@@ -238,7 +238,10 @@ class ExtensionAPI:
         Get the current UI action being performed.
         
         Returns:
-            Dict[str, str]: A dictionary containing UI action details.
+            Dict[str, str]: A dictionary containing UI action details. The 'state' key contains
+                           key-value pairs from the form data, where keys correspond to the 'name'
+                           attributes of form elements (input, textarea, button, etc.) and values
+                           are the submitted form values. (https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData)
         """
         return self._local.ui_action
 
