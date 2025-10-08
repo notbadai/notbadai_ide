@@ -1,4 +1,6 @@
 import os
+from warnings import deprecated
+
 import requests
 import threading
 from typing import Dict, List, Optional, Union
@@ -174,7 +176,7 @@ class ExtensionAPI:
                                repo_path=self._local.repo_path,
                                patch_text=data['patch_text']
                                )
-
+    @deprecated
     def get_context_files(self) -> dict[str, list[File]]:
         """
         Get files that provide context for the current operation.
