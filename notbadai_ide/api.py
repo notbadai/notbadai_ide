@@ -198,7 +198,7 @@ class ExtensionAPI:
         Get the API key for a specific provider.
         
         Args:
-            provider: The name of the API provider (e.g., 'openai', 'anthropic').
+            provider: The name of the API provider (e.g., 'openrouter', 'deepinfra').
             
         Returns:
             Optional[APIKey]: The APIKey object for the provider, or None if not found.
