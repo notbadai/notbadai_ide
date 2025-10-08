@@ -267,7 +267,9 @@ class ExtensionAPI:
         Provide autocomplete suggestions to the IDE.
         
         Args:
-            suggestions: A list of suggestion dictionaries containing completion options.
+            suggestions: A list of suggestion dictionaries. Each dictionary should contain:
+                - 'label' (str): The display text shown in the autocomplete popup
+                - 'text' (str): The actual text that will be inserted when the suggestion is selected
         """
         self._dump('autocomplete', suggestions=suggestions)
 
