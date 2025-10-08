@@ -1,5 +1,4 @@
 import os
-from warnings import deprecated
 
 import requests
 import threading
@@ -176,7 +175,7 @@ class ExtensionAPI:
                                repo_path=self._local.repo_path,
                                patch_text=data['patch_text']
                                )
-    @deprecated
+
     def get_context_files(self) -> dict[str, list[File]]:
         """
         Get files that provide context for the current operation.
@@ -310,10 +309,11 @@ class ExtensionAPI:
 
     def ui_form(self, title: str, form_content: str):
         """
-        Display a form in the IDE UI.
+        Display a custom HTML form in the IDE Tools UI.
         
         Args:
-            title: The form title to display.
-            form_content: The form content/configuration.
+            title: The form title to display at the top of the form dialog.
+            form_content: The HTML form content as a string. Should be a valid HTML form
+                         with standard form elements like input, textarea, button, select, etc.
         """
         self._dump('ui_form', title=title, form_content=form_content)
